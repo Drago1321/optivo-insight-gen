@@ -1,15 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Lato:wght@300;400;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Optivo Research Design System */
 
 @layer base {
   :root {
+    /* Core Brand Colors */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 210 45% 20%;
+    
+    /* Primary Navy Blue Theme */
+    --primary: 210 45% 20%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 210 45% 35%;
+    --primary-dark: 210 55% 15%;
+    
+    /* Secondary Greys */
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 210 45% 20%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 210 15% 55%;
+    
+    /* Accent Colors */
+    --accent: 210 100% 55%;
+    --accent-foreground: 0 0% 100%;
+    --accent-light: 210 100% 65%;
+    
+    /* Neutral System */
+    --card: 0 0% 100%;
+    --card-foreground: 210 45% 20%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 45% 20%;
+    --border: 210 20% 90%;
+    --input: 210 20% 90%;
+    --ring: 210 45% 20%;
+    
+    /* Status Colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+    
+    /* Design Elements */
+    --radius: 0.5rem;
+    --shadow-soft: 0 2px 8px -2px hsl(210 45% 20% / 0.08);
+    --shadow-medium: 0 4px 16px -4px hsl(210 45% 20% / 0.12);
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent-light)));
+    
+    /* Sidebar (if needed) */
 
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
@@ -39,19 +81,12 @@ All colors MUST be HSL.
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -100,6 +135,52 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer components {
+  /* Professional Button Variants */
+  .btn-primary {
+    @apply bg-primary text-primary-foreground hover:bg-primary-dark transition-all duration-300 font-medium px-6 py-3 rounded-lg shadow-soft hover:shadow-medium;
+  }
+  
+  .btn-accent {
+    @apply bg-accent text-accent-foreground hover:bg-accent-light transition-all duration-300 font-medium px-6 py-3 rounded-lg shadow-soft hover:shadow-medium;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 font-medium px-6 py-3 rounded-lg;
+  }
+  
+  /* Section Spacing */
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+  
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  /* Cards */
+  .card-professional {
+    @apply bg-card border border-border rounded-xl p-6 shadow-soft hover:shadow-medium transition-all duration-300;
+  }
+  
+  /* Typography Utilities */
+  .heading-primary {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold leading-tight;
+  }
+  
+  .heading-secondary {
+    @apply text-3xl md:text-4xl font-semibold leading-tight;
+  }
+  
+  .text-large {
+    @apply text-lg md:text-xl leading-relaxed;
   }
 }
