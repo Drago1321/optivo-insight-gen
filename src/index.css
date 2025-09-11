@@ -48,38 +48,10 @@
     --radius: 0.5rem;
     --shadow-soft: 0 2px 8px -2px hsl(210 45% 20% / 0.08);
     --shadow-medium: 0 4px 16px -4px hsl(210 45% 20% / 0.12);
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)));
-    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent-light)));
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-dark)));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(210 100% 65%));
     
     /* Sidebar (if needed) */
-
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
-
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;
@@ -146,11 +118,11 @@
 @layer components {
   /* Professional Button Variants */
   .btn-primary {
-    @apply bg-primary text-primary-foreground hover:bg-primary-dark transition-all duration-300 font-medium px-6 py-3 rounded-lg shadow-soft hover:shadow-medium;
+    @apply bg-primary text-primary-foreground hover:opacity-90 transition-all duration-300 font-medium px-6 py-3 rounded-lg shadow-soft hover:shadow-medium;
   }
   
   .btn-accent {
-    @apply bg-accent text-accent-foreground hover:bg-accent-light transition-all duration-300 font-medium px-6 py-3 rounded-lg shadow-soft hover:shadow-medium;
+    @apply bg-accent text-accent-foreground hover:opacity-90 transition-all duration-300 font-medium px-6 py-3 rounded-lg shadow-soft hover:shadow-medium;
   }
   
   .btn-outline {

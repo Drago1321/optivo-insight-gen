@@ -41,7 +41,7 @@ const Footer = () => {
   return (
     <footer className="bg-primary text-primary-foreground">
       {/* Newsletter Section */}
-      <div className="border-b border-primary-light/20">
+      <div className="border-b border-primary/20">
         <div className="container-custom py-12">
           <div className="max-w-2xl mx-auto text-center space-y-6">
             <h3 className="text-2xl font-semibold">Stay Updated with Market Insights</h3>
@@ -53,7 +53,7 @@ const Footer = () => {
                 placeholder="Enter your email" 
                 className="bg-primary-foreground text-primary border-none flex-1"
               />
-              <Button className="bg-accent text-accent-foreground hover:bg-accent-light">
+              <Button className="bg-accent text-accent-foreground hover:opacity-90">
                 Subscribe
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
@@ -92,13 +92,13 @@ const Footer = () => {
 
             {/* Social Media */}
             <div className="flex space-x-4">
-              <a href="#" className="w-8 h-8 bg-primary-light/20 rounded-lg flex items-center justify-center hover:bg-accent hover:text-accent-foreground transition-colors">
+              <a href="#" className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center hover:bg-accent hover:text-accent-foreground transition-colors">
                 <Linkedin className="h-4 w-4" />
               </a>
-              <a href="#" className="w-8 h-8 bg-primary-light/20 rounded-lg flex items-center justify-center hover:bg-accent hover:text-accent-foreground transition-colors">
+              <a href="#" className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center hover:bg-accent hover:text-accent-foreground transition-colors">
                 <Twitter className="h-4 w-4" />
               </a>
-              <a href="#" className="w-8 h-8 bg-primary-light/20 rounded-lg flex items-center justify-center hover:bg-accent hover:text-accent-foreground transition-colors">
+              <a href="#" className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center hover:bg-accent hover:text-accent-foreground transition-colors">
                 <Facebook className="h-4 w-4" />
               </a>
             </div>
@@ -175,7 +175,7 @@ const Footer = () => {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-primary-light/20">
+      <div className="border-t border-primary/20">
         <div className="container-custom py-6">
           <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
             <div className="text-sm text-primary-foreground/80">
