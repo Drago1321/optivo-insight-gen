@@ -11,18 +11,17 @@ const HeroSection = () => {
           <div className="space-y-8">
             <div className="space-y-6">
               <h1 className="heading-primary text-primary">
-                We deliver custom market research reports for{" "}
-                <span className="text-accent">SMEs & startups</span>
+                Helping SMEs grow with{" "}
+                <span className="text-accent">global insights</span>
               </h1>
               <p className="text-large text-muted-foreground max-w-xl">
-                Industry-specific, region-focused insights delivered fast, affordable, and reliable. 
-                Tailored research solutions for businesses across Europe, USA, Australia, and Singapore.
+                We provide customized, on-demand market research to help your business take the right decisions.
               </p>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Button className="btn-accent group">
-                Request a Report
+                Request a Market Research Report
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Button>
               <Button variant="outline" className="btn-outline">
