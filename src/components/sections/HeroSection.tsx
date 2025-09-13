@@ -11,21 +11,20 @@ const HeroSection = () => {
           <div className="space-y-8">
             <div className="space-y-6">
               <h1 className="heading-primary text-primary">
-                Helping SMEs grow with{" "}
-                <span className="text-accent">global insights</span>
+                What we do
               </h1>
               <p className="text-large text-muted-foreground max-w-xl">
-                We provide customized, on-demand market research to help your business take the right decisions.
+                Actionable market insights for SMEs & startups.
               </p>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button className="btn-accent group">
-                Request a Market Research Report
+              <Button 
+                onClick={() => document.getElementById('services-form')?.scrollIntoView({ behavior: 'smooth' })}
+                className="btn-accent group"
+              >
+                Get a free snapshot
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              <Button variant="outline" className="btn-outline">
-                View Sample Reports
               </Button>
             </div>
 

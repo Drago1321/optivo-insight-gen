@@ -1,191 +1,217 @@
+import { Helmet } from "react-helmet-async";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Calendar, FileText, Download, Eye } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { Download, TrendingUp, Users, Target, ArrowRight } from "lucide-react";
 
 const Portfolio = () => {
-  const insights = [
+  const sampleReports = [
     {
-      title: "European EdTech Market Growth Opportunities",
-      category: "Market Analysis",
-      date: "March 2024",
-      description: "Comprehensive analysis of the educational technology sector across major European markets, identifying key growth drivers and investment opportunities.",
-      type: "Sample Report",
-      readTime: "8 min read"
+      title: "European E-commerce Market Analysis 2024",
+      description: "Comprehensive 45-page report covering market size, key players, consumer trends, and growth opportunities across major European markets.",
+      pages: 45,
+      type: "Market Analysis"
     },
     {
-      title: "SME Digital Transformation Trends in 2024",
-      category: "Industry Insights",
-      date: "February 2024",
-      description: "How small and medium enterprises are adapting to digital transformation challenges and leveraging technology for competitive advantage.",
-      type: "Blog Article",
-      readTime: "5 min read"
+      title: "SaaS Startup Market Entry Strategy",
+      description: "Strategic roadmap for entering the North American SaaS market, including competitive landscape, pricing strategies, and go-to-market recommendations.",
+      pages: 32,
+      type: "Strategy Report"
     },
     {
-      title: "Consumer Behavior Changes Post-Pandemic",
-      category: "Consumer Research",
-      date: "January 2024",
-      description: "Deep dive into evolving consumer preferences and purchasing patterns in the post-pandemic era across US and European markets.",
-      type: "Case Study",
-      readTime: "12 min read"
-    },
-    {
-      title: "FinTech Regulatory Landscape: US vs EU",
-      category: "Regulatory Analysis",
-      date: "December 2023",
-      description: "Comparative analysis of financial technology regulations between United States and European Union markets for fintech startups.",
-      type: "Sample Report",
-      readTime: "15 min read"
-    },
-    {
-      title: "Sustainable Food & Beverage Market Trends",
-      category: "Sustainability",
-      date: "November 2023",
-      description: "Market analysis of sustainable food and beverage products, consumer demand patterns, and growth projections for eco-friendly brands.",
-      type: "Market Report",
-      readTime: "10 min read"
-    },
-    {
-      title: "Luxury Market Recovery in Asia-Pacific",
-      category: "Luxury Goods",
-      date: "October 2023",
-      description: "Analysis of luxury goods market recovery patterns in key Asia-Pacific regions, focusing on consumer sentiment and spending behaviors.",
-      type: "Regional Study",
-      readTime: "7 min read"
+      title: "Consumer Behavior in Post-Pandemic Retail",
+      description: "In-depth analysis of changing consumer preferences and shopping behaviors, with actionable insights for retail businesses.",
+      pages: 28,
+      type: "Consumer Research"
     }
   ];
 
-  const testimonials = [
+  const caseStudies = [
     {
-      client: "TechStart Solutions",
-      industry: "EdTech",
-      feedback: "The market analysis provided by Optivo Research was instrumental in our successful expansion into the European market. Their insights helped us identify the right opportunities and avoid potential pitfalls.",
-      project: "European EdTech Market Entry Strategy"
+      client: "TechStart Inc.",
+      industry: "SaaS",
+      challenge: "Needed market validation for their new project management tool before launching in Europe",
+      approach: "Conducted comprehensive competitor analysis, target market sizing, and customer survey across 5 European countries",
+      outcome: "Client successfully launched with 30% higher user acquisition than projected, securing $2M in Series A funding",
+      metrics: ["30% higher user acquisition", "$2M Series A funding", "5 countries analyzed"]
     },
     {
-      client: "GreenEats Co.",
-      industry: "Food & Beverage",
-      feedback: "Exceptional research quality and attention to detail. The consumer behavior analysis helped us pivot our product strategy and increase market share by 40% within six months.",
-      project: "Sustainable Food Consumer Research"
+      client: "EcoFashion Brand",
+      industry: "Retail",
+      challenge: "Struggling to differentiate in the crowded sustainable fashion market",
+      approach: "Deep-dive consumer research, brand positioning analysis, and market gap identification study",
+      outcome: "Repositioned brand successfully, leading to 45% increase in online sales and expanded retail partnerships",
+      metrics: ["45% sales increase", "3 new retail partnerships", "Brand repositioning"]
     },
     {
-      client: "FinanceForward",
-      industry: "FinTech",
-      feedback: "Professional, timely, and thorough. The regulatory landscape analysis was exactly what we needed to navigate compliance requirements across multiple markets.",
-      project: "FinTech Regulatory Compliance Study"
+      client: "HealthTech Startup",
+      industry: "Healthcare",
+      challenge: "Required regulatory and market insights for medical device launch in US market",
+      approach: "Regulatory landscape analysis, stakeholder mapping, and go-to-market strategy development",
+      outcome: "Accelerated FDA approval process by 6 months, achieved break-even within first year of launch",
+      metrics: ["6 months faster approval", "Break-even in Year 1", "Regulatory compliance"]
+    },
+    {
+      client: "Food & Beverage SME",
+      industry: "FMCG",
+      challenge: "Wanted to expand organic product line but unsure about market demand and pricing",
+      approach: "Consumer preference study, price sensitivity analysis, and competitive benchmarking across target demographics",
+      outcome: "Launched optimized product line with 25% higher margins and 60% faster market penetration",
+      metrics: ["25% higher margins", "60% faster penetration", "Product optimization"]
     }
   ];
 
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      <main>
-        {/* Hero Section */}
-        <section className="section-padding bg-secondary/30">
-          <div className="container-custom text-center">
-            <h1 className="heading-primary text-foreground mb-6">Portfolio & Insights</h1>
-            <p className="text-large text-muted-foreground max-w-3xl mx-auto">
-              Explore our latest research findings, market analyses, and thought leadership content 
-              that showcase our expertise in delivering actionable business insights.
-            </p>
-          </div>
-        </section>
-
-        {/* Insights Grid */}
-        <section className="section-padding">
-          <div className="container-custom">
-            <div className="mb-12">
-              <h2 className="heading-secondary text-center mb-4">Latest Insights</h2>
-              <p className="text-center text-muted-foreground">
-                Stay informed with our latest research findings and market analyses
-              </p>
+    <>
+      <Helmet>
+        <title>Portfolio - Optivo Research - Our Work & Case Studies</title>
+        <meta
+          name="description"
+          content="Explore our portfolio of market research reports and success stories. See how we've helped SMEs and startups make data-driven decisions."
+        />
+      </Helmet>
+      
+      <div className="min-h-screen bg-background">
+        <Header />
+        
+        <main>
+          {/* Hero Section */}
+          <section className="section-padding bg-gradient-to-br from-background to-muted/30">
+            <div className="container-custom">
+              <div className="max-w-4xl mx-auto text-center space-y-6">
+                <h1 className="heading-primary text-primary">Our Portfolio</h1>
+                <p className="text-large text-muted-foreground">
+                  Discover how we've helped businesses make informed decisions with actionable market insights.
+                </p>
+              </div>
             </div>
+          </section>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {insights.map((insight, index) => (
-                <Card key={index} className="card-professional h-full flex flex-col">
-                  <CardHeader>
-                    <div className="flex items-center justify-between mb-3">
-                      <Badge variant="secondary">{insight.category}</Badge>
-                      <div className="flex items-center text-sm text-muted-foreground">
-                        <Calendar className="w-4 h-4 mr-1" />
-                        {insight.date}
+          {/* Sample Reports */}
+          <section className="section-padding">
+            <div className="container-custom">
+              <div className="max-w-3xl mx-auto text-center space-y-6 mb-12">
+                <h2 className="heading-secondary text-primary">Sample Reports</h2>
+                <p className="text-large text-muted-foreground">
+                  Download sample reports to see the quality and depth of our research.
+                </p>
+              </div>
+
+              <div className="grid md:grid-cols-3 gap-8 mb-16">
+                {sampleReports.map((report, index) => (
+                  <Card key={index} className="card-professional">
+                    <CardHeader className="space-y-4">
+                      <div className="flex items-center justify-between">
+                        <Badge variant="outline">{report.type}</Badge>
+                        <span className="text-sm text-muted-foreground">{report.pages} pages</span>
                       </div>
-                    </div>
-                    <CardTitle className="text-xl line-clamp-2">{insight.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent className="flex-1 flex flex-col">
-                    <p className="text-muted-foreground mb-4 flex-1">{insight.description}</p>
-                    
-                    <div className="space-y-3">
-                      <div className="flex items-center justify-between text-sm">
-                        <div className="flex items-center text-primary">
-                          <FileText className="w-4 h-4 mr-1" />
-                          {insight.type}
+                      <CardTitle className="text-xl text-primary">{report.title}</CardTitle>
+                      <CardDescription>{report.description}</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <Button className="w-full btn-outline group">
+                        <Download className="h-4 w-4 mr-2" />
+                        Download Sample
+                        <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                      </Button>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Case Studies */}
+          <section className="section-padding bg-muted/30">
+            <div className="container-custom">
+              <div className="max-w-3xl mx-auto text-center space-y-6 mb-12">
+                <h2 className="heading-secondary text-primary">Success Stories</h2>
+                <p className="text-large text-muted-foreground">
+                  Real results from real clients who trusted us with their market research needs.
+                </p>
+              </div>
+
+              <div className="grid lg:grid-cols-2 gap-8">
+                {caseStudies.map((study, index) => (
+                  <Card key={index} className="card-professional">
+                    <CardHeader className="space-y-4">
+                      <div className="flex items-center justify-between">
+                        <Badge variant="outline">{study.industry}</Badge>
+                        <span className="text-sm font-medium text-primary">{study.client}</span>
+                      </div>
+                    </CardHeader>
+                    <CardContent className="space-y-6">
+                      {/* Challenge */}
+                      <div className="space-y-2">
+                        <div className="flex items-center space-x-2">
+                          <Target className="h-5 w-5 text-accent" />
+                          <h4 className="font-semibold text-primary">Challenge</h4>
                         </div>
-                        <span className="text-muted-foreground">{insight.readTime}</span>
+                        <p className="text-muted-foreground text-sm">{study.challenge}</p>
                       </div>
-                      
-                      <div className="flex gap-2">
-                        <Button variant="outline" size="sm" className="flex-1">
-                          <Eye className="w-4 h-4 mr-2" />
-                          Read More
-                        </Button>
-                        {insight.type.includes('Report') && (
-                          <Button variant="ghost" size="sm">
-                            <Download className="w-4 h-4" />
-                          </Button>
-                        )}
+
+                      {/* Approach */}
+                      <div className="space-y-2">
+                        <div className="flex items-center space-x-2">
+                          <Users className="h-5 w-5 text-accent" />
+                          <h4 className="font-semibold text-primary">Our Approach</h4>
+                        </div>
+                        <p className="text-muted-foreground text-sm">{study.approach}</p>
                       </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
 
-        {/* Client Testimonials */}
-        <section className="section-padding bg-muted/50">
-          <div className="container-custom">
-            <div className="text-center mb-12">
-              <h2 className="heading-secondary mb-4">Client Success Stories</h2>
-              <p className="text-muted-foreground">
-                See how our research has helped businesses make informed decisions and achieve growth
-              </p>
-            </div>
+                      {/* Outcome */}
+                      <div className="space-y-2">
+                        <div className="flex items-center space-x-2">
+                          <TrendingUp className="h-5 w-5 text-accent" />
+                          <h4 className="font-semibold text-primary">Results</h4>
+                        </div>
+                        <p className="text-muted-foreground text-sm">{study.outcome}</p>
+                      </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {testimonials.map((testimonial, index) => (
-                <Card key={index} className="card-professional">
-                  <CardHeader>
-                    <div className="space-y-2">
-                      <CardTitle className="text-lg">{testimonial.client}</CardTitle>
-                      <Badge variant="outline">{testimonial.industry}</Badge>
-                    </div>
-                  </CardHeader>
-                  <CardContent className="space-y-4">
-                    <p className="text-muted-foreground italic">"{testimonial.feedback}"</p>
-                    <div className="text-sm text-primary font-medium">
-                      Project: {testimonial.project}
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
+                      {/* Metrics */}
+                      <div className="flex flex-wrap gap-2 pt-4">
+                        {study.metrics.map((metric, metricIndex) => (
+                          <Badge key={metricIndex} variant="secondary" className="text-xs">
+                            {metric}
+                          </Badge>
+                        ))}
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
             </div>
+          </section>
 
-            <div className="text-center mt-12">
-              <Button className="btn-accent">
-                View More Case Studies
-              </Button>
+          {/* CTA Section */}
+          <section className="section-padding">
+            <div className="container-custom">
+              <div className="max-w-3xl mx-auto text-center space-y-6">
+                <h2 className="heading-secondary text-primary">Ready to Get Started?</h2>
+                <p className="text-large text-muted-foreground">
+                  Let us help you make informed business decisions with actionable market insights.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Button 
+                    onClick={() => window.location.href = '/services#services-form'}
+                    className="btn-accent"
+                  >
+                    Request Your Research Report
+                  </Button>
+                  <Button variant="outline" className="btn-outline">
+                    Schedule a Consultation
+                  </Button>
+                </div>
+              </div>
             </div>
-          </div>
-        </section>
-      </main>
-      <Footer />
-    </div>
+          </section>
+        </main>
+
+        <Footer />
+      </div>
+    </>
   );
 };
 

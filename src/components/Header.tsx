@@ -6,15 +6,11 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
-    { name: "Home", href: "/" },
     { name: "About Us", href: "/about" },
-    { 
-      name: "Services", 
-      href: "/services"
-    },
-    { name: "Careers", href: "/careers" },
+    { name: "Services", href: "/services" },
+    { name: "Articles", href: "/articles" },
     { name: "Portfolio", href: "/portfolio" },
-    { name: "Contact", href: "#contact" },
+    { name: "Contact Us", href: "/contact" },
   ];
 
   return (
@@ -44,8 +40,8 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden lg:flex items-center space-x-4">
-            <Button className="btn-accent">
-              Request a Report
+            <Button variant="outline" className="btn-outline">
+              Get a Snapshot
             </Button>
           </div>
 
@@ -77,8 +73,8 @@ const Header = () => {
                 </div>
               ))}
               <div className="pt-4">
-                <Button className="btn-accent w-full">
-                  Request a Report
+                <Button variant="outline" className="btn-outline w-full">
+                  Get a Snapshot
                 </Button>
               </div>
             </div>
